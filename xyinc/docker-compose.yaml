@@ -1,0 +1,9 @@
+services:
+  postgresql:
+    image: postgres:16
+    ports:
+      - 5932:5432
+    environment:
+      - POSTGRES_USER=xyinc-user
+      - POSTGRES_PASSWORD=xyinc-passwd
+      - POSTGRES_DB=xyinc-db

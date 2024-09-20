@@ -1,0 +1,7 @@
+CREATE SEQUENCE ${app_schema}.revinfo_seq START 1 INCREMENT BY 50;
+
+CREATE TABLE ${app_schema}.REVINFO (
+    REV INTEGER NOT NULL,
+    REVTSTMP BIGINT,
+    PRIMARY KEY (REV)
+);

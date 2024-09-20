@@ -1,0 +1,20 @@
+spring:
+  datasource:
+    url: jdbc:postgresql://${db.endpoint}:${db.port}/${db.database}?currentSchema=${spring.flyway.placeholders.app_schema}
+  flyway:
+    schemas: ${spring.flyway.placeholders.app_schema}_migration,${spring.flyway.placeholders.app_schema}
+    placeholders:
+      app_schema: xyinc
+
+  jpa:
+    properties:
+      org:
+        hibernate:
+          envers:
+            autoRegisterListeners: true
+            revision_field_name: rev
+            revision_type_field_name: revtype
+            audit_table_suffix: _AUD
+            revision_table_name: REVINFO
+            revision_sequence_name: revinfo_seq
+            store_data_at_delete: true
